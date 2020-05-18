@@ -4,6 +4,7 @@ module Findable
   e.name == name
 end
 end
+end
 
 class Artist
   extend Findable
