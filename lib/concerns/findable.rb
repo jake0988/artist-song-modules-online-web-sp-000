@@ -1,7 +1,7 @@
 module Findable
   def find_by_name(name)
   all.select do |e|
-  e == name
+  e.name == name
 end
 
 class Artist
