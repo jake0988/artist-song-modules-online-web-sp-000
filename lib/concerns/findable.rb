@@ -3,6 +3,7 @@ module Findable
   all.detect do |e|
   e.name == name
 end
+end
 
 class Artist
   extend Findable
