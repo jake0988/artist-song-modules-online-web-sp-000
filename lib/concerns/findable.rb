@@ -1,6 +1,6 @@
 module Findable
   def find_by_name(name)
-  all.select do |e|
+  all.detect do |e|
   e.name == name
 end
 
