@@ -1,18 +1,21 @@
 module Memorable
-
-  def count
-    all.count
+  module Memorable
+    module ClassMethods
+      def reset_all
+        self.all.clear
+      end
+   
+      def count
+        self.all.count
+      end
+    end
+   
+    module InstanceMethods
+      def initialize
+        self.class.all << self
+      end
+    end
   end
 
-  def reset_all
-    all.clear
-  end
-end
-
-class Artist
-  extend Memorable
-end
-
-class Song
-  extend Memorable
-end
+  extend Memorable::ClassMethods
+include Memorable::InstanceMethods
